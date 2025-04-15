@@ -277,7 +277,7 @@ const MainPage = () => {
                 Sou imensamente grato por ter você, minha constelação favorita no céu da minha vida.
               </p>
               <div className="stellar-signature">
-                Para sempre seu, em qualquer universo.
+                Para sempre seu, em qualquer universo, minha autista kkk 💚.
               </div>
             </div>
           </div>
