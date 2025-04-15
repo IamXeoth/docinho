@@ -1,0 +1,791 @@
+/* src/styles/main-page.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #66BB6A;
+  --background-color: #F8F9FA;
+  --text-color: #333;
+}
+
+/* Ajustes gerais para performance */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+.main-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(102, 187, 106, 0.1) 100%);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 650px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-title {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Foto Principal */
+.main-photo-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  will-change: transform; /* Otimização para animações */
+}
+
+.main-photo-container:hover {
+  transform: scale(1.01);
+}
+
+.main-photo-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Carta Romântica */
+.romantic-letter {
+  background: linear-gradient(to right, rgba(76, 175, 80, 0.05), rgba(102, 187, 106, 0.05));
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.romantic-letter h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.8rem;
+}
+
+.letter-content p {
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.signature {
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-top: 1rem;
+}
+
+.signature-name {
+  text-align: right;
+  color: var(--primary-color);
+  margin-top: 1rem;
+}
+
+/* Música */
+.music-section {
+  margin-bottom: 2rem;
+}
+
+.nossa-musica {
+  background-color: var(--background-color);
+  padding: 1.25rem;
+  border-radius: 12px;
+}
+
+.nossa-musica h3 {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Marcos do Relacionamento */
+.relationship-milestones {
+  margin-bottom: 2.5rem;
+}
+
+.milestone-title {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.milestone-title:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.milestones-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (min-width: 580px) {
+  .milestones-container {
+    flex-direction: row;
+  }
+}
+
+.milestone-card {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.milestone-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  border-radius: 12px 0 0 12px;
+}
+
+.milestone-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+}
+
+.milestone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(76, 175, 80, 0.1);
+  margin-bottom: 1rem;
+}
+
+.milestone-icon svg {
+  color: var(--primary-color);
+}
+
+.milestone-content h4 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.milestone-content p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Contador de Tempo de Namoro */
+.time-together-container {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(102, 187, 106, 0.1) 100%);
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+}
+
+.time-together-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.time-together-title:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.time-circles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.time-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), inset 0 0 0 3px var(--primary-color);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.time-circle:hover {
+  transform: scale(1.05);
+}
+
+.time-circle:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.circle-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-number {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.time-label {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+.time-message {
+  font-style: italic;
+  color: var(--text-color);
+  max-width: 80%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 1rem 0;
+}
+
+/* Seção de contagem regressiva de aniversário */
+.birthday-countdown {
+  margin-bottom: 2rem;
+}
+
+.birthday-section-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.birthday-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 580px) {
+  .birthday-cards-container {
+    flex-direction: row;
+  }
+}
+
+.birthday-card {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  will-change: transform; /* Otimização para animações */
+  display: flex;
+  flex-direction: column;
+}
+
+.birthday-card:hover {
+  transform: translateY(-5px);
+}
+
+.her-birthday {
+  border-top: 5px solid var(--primary-color);
+}
+
+.his-birthday {
+  border-top: 5px solid var(--secondary-color);
+}
+
+.birthday-card-content {
+  flex-grow: 1;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 580px) {
+  .birthday-card-content {
+    min-height: 260px;
+  }
+}
+
+.birthday-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.countdown-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  box-shadow: 0 5px 12px rgba(102, 187, 106, 0.3);
+}
+
+.days-number {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.days-text {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.birthday-message {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  padding: 0 0.75rem;
+  line-height: 1.5;
+}
+
+/* Estilo atualizado para os rodapés dos cartões */
+.birthday-card-footer {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.2;
+  letter-spacing: normal;
+}
+
+.her-birthday .birthday-card-footer,
+.his-birthday .birthday-card-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.her-birthday .birthday-card-footer {
+  color: var(--primary-color);
+}
+
+.his-birthday .birthday-card-footer {
+  color: var(--secondary-color);
+}
+
+.cosmic-quote {
+  background: linear-gradient(to right, rgba(76, 175, 80, 0.05), rgba(102, 187, 106, 0.05));
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.cosmic-quote svg {
+  color: var(--secondary-color);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.cosmic-quote p {
+  margin: 0;
+  font-style: italic;
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* Mensagem Estelar - Visual melhorado */
+.stellar-message-container {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.stellar-message-wrapper {
+  background: linear-gradient(135deg, #0a3d0a, #1b5e20);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Estrelas decorativas */
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.7;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  }
+  
+  .star1 {
+    width: 3px;
+    height: 3px;
+    top: 15%;
+    left: 10%;
+    animation: twinkle 4s infinite ease-in-out;
+  }
+  
+  .star2 {
+    width: 2px;
+    height: 2px;
+    top: 30%;
+    right: 15%;
+    animation: twinkle 3.5s infinite ease-in-out 0.5s;
+  }
+  
+  .star3 {
+    width: 4px;
+    height: 4px;
+    bottom: 20%;
+    left: 20%;
+    animation: twinkle 5s infinite ease-in-out 1s;
+  }
+  
+  .star4 {
+    width: 3px;
+    height: 3px;
+    top: 10%;
+    right: 30%;
+    animation: twinkle 4.5s infinite ease-in-out 1.5s;
+  }
+  
+  .star5 {
+    width: 2px;
+    height: 2px;
+    bottom: 40%;
+    right: 10%;
+    animation: twinkle 3s infinite ease-in-out 0.7s;
+  }
+  
+  .star6 {
+    width: 3px;
+    height: 3px;
+    bottom: 15%;
+    right: 25%;
+    animation: twinkle 4s infinite ease-in-out 2s;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.3; }
+  }
+  
+  .stellar-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    color: white;
+  }
+  
+  .stellar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .stellar-title:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .stellar-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  
+  .stellar-signature {
+    font-style: italic;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-top: 1rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .stellar-signature:before, .stellar-signature:after {
+    content: "★";
+    margin: 0 10px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  
+  /* Otimizações para dispositivos móveis */
+  @media (max-width: 480px) {
+    .main-content {
+      padding: 1rem;
+    }
+    
+    .main-title {
+      font-size: 1.8rem;
+    }
+    
+    .main-photo-img {
+      height: 250px;
+    }
+    
+    .romantic-letter {
+      padding: 1rem;
+    }
+    
+    .romantic-letter h2 {
+      font-size: 1.6rem;
+    }
+    
+    .letter-content p {
+      font-size: 0.95rem;
+    }
+    
+    .milestone-title {
+      font-size: 1.4rem;
+    }
+    
+    .milestones-container {
+      gap: 1rem;
+    }
+    
+    .milestone-card {
+      padding: 1.25rem;
+    }
+    
+    .time-together-container {
+      padding: 1.5rem 1rem;
+    }
+    
+    .time-together-title {
+      font-size: 1.4rem;
+    }
+    
+    .time-circles-container {
+      gap: 0.75rem;
+    }
+    
+    .time-circle {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .time-number {
+      font-size: 1.8rem;
+    }
+    
+    .time-message {
+      font-size: 1rem;
+    }
+    
+    .birthday-section-title {
+      font-size: 1.4rem;
+    }
+    
+    .birthday-date {
+      font-size: 1.1rem;
+    }
+    
+    .countdown-circle {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .days-number {
+      font-size: 1.8rem;
+    }
+    
+    .birthday-message {
+      font-size: 0.85rem;
+    }
+    
+    .cosmic-quote {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0.75rem;
+    }
+    
+    .cosmic-quote p {
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    
+    .stellar-message-wrapper {
+      padding: 2rem 1rem;
+    }
+    
+    .stellar-title {
+      font-size: 1.6rem;
+    }
+    
+    .stellar-text {
+      font-size: 1rem;
+    }
+    
+    .stellar-signature {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Otimizações adicionais para telas menores */
+  @media (max-width: 350px) {
+    .main-content {
+      padding: 0.75rem;
+    }
+    
+    .main-title {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    
+    .main-photo-img {
+      height: 200px;
+    }
+    
+    .time-circle {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .time-number {
+      font-size: 1.6rem;
+    }
+    
+    .milestone-card {
+      padding: 1rem;
+    }
+    
+    .birthday-card-content {
+      padding: 1rem;
+    }
+    
+    .countdown-circle {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 1rem;
+    }
+    
+    .days-number {
+      font-size: 1.6rem;
+    }
+    
+    .stellar-title {
+      font-size: 1.4rem;
+    }
+    
+    .stellar-text {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Otimizações de performance para animações */
+  @media (prefers-reduced-motion) {
+    .main-photo-container:hover,
+    .milestone-card:hover,
+    .time-circle:hover,
+    .birthday-card:hover {
+      transform: none;
+    }
+    
+    .star1, .star2, .star3, .star4, .star5, .star6 {
+      animation: none;
+    }
+  }
